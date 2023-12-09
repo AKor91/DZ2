@@ -76,3 +76,37 @@
 // Console.WriteLine("min = " +min);
 // Console.WriteLine();
 // Console.WriteLine("Разница между max и min = " +raz);
+
+
+// Задача 4**(не обязательно): Дано натуральное число в диапазоне от 1 до 100 000. Создайте массив,
+// состоящий из цифр этого числа. Старший разряд числа должен располагаться на 0-м индексе
+// массива, младший – на последнем. Размер массива должен быть равен количеству цифр.
+
+Console.WriteLine("Введите число");
+int num = Convert.ToInt32(Console.ReadLine());
+
+if(num > 0 && num < 100001)
+{   
+    int n = 0;
+    int temp = num;
+    
+    while(temp % 10 > 0)
+    {
+        temp = temp / 10;
+        n = n + 1;
+    }
+    
+    int[] array = new int[n];
+    temp = num;
+       
+    for(int i = 0; i < array.Length; i++)
+    {
+       array[i] = temp % 10;
+       temp = temp / 10;
+       Console.Write(array[i]+ " ");
+    }
+}
+else
+{
+    Console.WriteLine("Число не подходит");
+}
